@@ -1,2 +1,19 @@
 # Check-if-a-Number-is-Strong
 Using C language program is made which gives the output to Check if a Number is Strong
+#include <stdio.h>
+int fact(int x) {
+    int f = 1;
+    while(x > 1) f *= x--;
+    return f;
+}
+int main() {
+    int num, temp, sum = 0;
+    scanf("%d", &num);
+    temp = num;
+    while(temp > 0) {
+        sum += fact(temp % 10);
+        temp /= 10;
+    }
+    printf(sum == num ? "Strong" : "Not Strong");
+    return 0;
+}
